@@ -1,0 +1,51 @@
+[build-system]
+requires = ["uv>=0.1.0", "setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "media-transcoder"
+version = "0.1.0"
+description = "A media transcoder with CUDA hardware acceleration support"
+readme = "README.md"
+authors = [
+    {name = "Lyuboslav Petrov", email = "lpetrov@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video :: Conversion",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "rich>=10.0.0",
+    "pathlib",
+    "typing-extensions",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/lpetrov/media-transcoder"
+"Bug Tracker" = "https://github.com/lpetrov/media-transcoder/issues"
+
+[project.scripts]
+media-transcoder = "media_transcoder.transcoder:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "--cov=media_transcoder"
+
+[tool.coverage.run]
+source = ["media_transcoder"]
+omit = ["tests/*", "setup.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]

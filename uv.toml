@@ -1,0 +1,17 @@
+[uv]
+# Use uv as the default package manager
+default = true
+
+[uv.pip]
+# Use uv pip for package installation
+default = true
+
+[scripts]
+# Define scripts that can be run with `uv run <script_name>`
+test = "pytest"
+test-cov = "pytest --cov=media_transcoder --cov-report=term --cov-report=html"
+lint = "flake8 media_transcoder tests"
+format = "black media_transcoder tests"
+check = "mypy media_transcoder"
+build = "python -m build"
+publish = "twine upload dist/*"

@@ -25,6 +25,8 @@ jobs:
         
     - name: Build package
       run: |
+        uv venv
+        source .venv/bin/activate
         uv build
         
     - name: Publish package distributions to PyPI

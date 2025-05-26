@@ -28,6 +28,8 @@ jobs:
         
     - name: Install dependencies
       run: |
+        uv venv
+        source .venv/bin/activate
         uv pip install pytest pytest-cov
         uv pip install -e ".[dev]"
     
@@ -38,7 +40,8 @@ jobs:
     
     - name: Test with pytest
       run: |
-        pytest --cov=media_transcoder --cov-report=xml
+        source .venv/bin/activate
+        python -m pytest --cov=media_transcoder --cov-report=xml
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3

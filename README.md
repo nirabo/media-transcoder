@@ -79,6 +79,42 @@ uv run --script tests/test_transcoder.py
 uv run pytest --cov=media_transcoder
 ```
 
+### Building the Package
+
+To build the package for distribution:
+
+```bash
+# Build both wheel and source distribution
+uv build
+
+# The built packages will be in the dist/ directory
+ls dist/
+```
+
+### Publishing to PyPI
+
+To publish the package to PyPI:
+
+```bash
+# Test publishing to TestPyPI first
+uv publish --index testpypi
+
+# Publish to the official PyPI
+uv publish
+```
+
+### Managing Dependencies
+
+This project uses UV for dependency management. To update dependencies:
+
+```bash
+# Update all dependencies
+uv pip sync
+
+# Add a new dependency
+uv pip install new-package
+```
+
 ## License
 
 MIT

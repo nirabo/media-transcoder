@@ -13,12 +13,24 @@ A powerful media transcoding tool with CUDA hardware acceleration support.
 
 ## Installation
 
+### Regular Installation
+
 ```bash
 # Using uv (recommended)
-uv pip install media-transcoder
+uv pip install nirabo-media-transcoder
 
 # Using pip
-pip install media-transcoder
+pip install nirabo-media-transcoder
+```
+
+### System-wide Installation
+
+```bash
+# Using uv (recommended)
+sudo uv pip install --system nirabo-media-transcoder
+
+# Using pip
+sudo pip install nirabo-media-transcoder
 ```
 
 ## Requirements

@@ -67,12 +67,12 @@ build: clean
 # Upload the package to TestPyPI
 publish-test: build
 	uv pip install twine
-	uv run python -m twine upload --repository testpypi dist/*
+	uv run python -m twine upload --repository testpypi --verbose dist/*
 
 # Upload the package to PyPI
 publish: build
 	uv pip install twine
-	uv run python -m twine upload dist/*
+	uv run python -m twine upload --verbose dist/*
 
 # Generate documentation
 docs:
